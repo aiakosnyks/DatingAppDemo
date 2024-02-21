@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj": {}
+    "c:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj": {
+    "c:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj",
+        "projectUniqueName": "c:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj",
+        "projectPath": "c:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj",
         "packagesPath": "C:\\Users\\esine\\.nuget\\packages\\",
-        "outputPath": "C:\\VS Code Repos\\DatingAppDemo\\API\\obj\\",
+        "outputPath": "c:\\VS Code Repos\\DatingAppDemo\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,16 +44,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
