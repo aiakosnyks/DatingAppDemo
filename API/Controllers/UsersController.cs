@@ -6,7 +6,7 @@ namespace API.Controllers;
 
 
 [ApiController]
-[Route("api/[controller]")] //api/users
+[Route("api/Users")] //api/users
 public class UsersController : ControllerBase
 {
     private readonly DataContext _context;
