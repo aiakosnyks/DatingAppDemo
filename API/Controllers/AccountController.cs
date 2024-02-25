@@ -5,7 +5,9 @@ using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
+using API.DTOs;
 
 namespace API.Controllers;
     public class AccountController: BaseApiController
@@ -17,18 +19,24 @@ namespace API.Controllers;
         }
 
         [HttpPost("register")] //POST: api/account/register
-        public async Task<ActionResult<AppUser>> Register(string username, string password)
+        public async Task<ActionResult<AppUser>> Register(RegisterDTO registerDTO)
         {
+            if(await UserExists(registerDTO.Username)) return BadRequest("Usernam is taken");
             using var hmac = new HMACSHA512();
             var user = new AppUser
             {
-                UserName = username,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
+                UserName = registerDTO.Username.ToLower(),
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.password)),
                 PasswordSalt = hmac.Key
             };
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return user;
+        }
+
+        public async Task<bool> UserExists(string username)
+        {
+            return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
         }
     }
