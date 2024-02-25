@@ -38,7 +38,7 @@ namespace API.Controllers;
         [HttpPost("login")]
         public async Task<AppUser> Login(LoginDTO, loginDTO)
         {
-
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == LoginDTO.user);
         }
 
         public async Task<bool> UserExists(string username)
