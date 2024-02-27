@@ -8,18 +8,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 using API.DTOs;
+using API.Interfaces;
 
 namespace API.Controllers;
     public class AccountController: BaseApiController
     {
         private readonly DataContext _context;
-        public AccountController(DataContext context)
+        private readonly ITokenService _tokenService;
+        public AccountController(DataContext context, ITokenService tokenService)
         {
             _context = context;
+            _tokenService = tokenService;
         }
 
         [HttpPost("register")] //POST: api/account/register
-        public async Task<ActionResult<AppUser>> Register(RegisterDTO registerDTO)
+        public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO)
         {
             if(await UserExists(registerDTO.Username)) return BadRequest("Username is taken");
             using var hmac = new HMACSHA512();
@@ -32,7 +35,12 @@ namespace API.Controllers;
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
-            return user;
+
+            return new UserDTO
+            {
+                Username = user.UserName,
+                Token = _tokenService.CreateToken(user)
+            };
         }
 
         [HttpPost("login")]
