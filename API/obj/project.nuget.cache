@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+/SJmFXQ4HIkAQkXT3QyXrwtGb9sXyXUFM9MZ70usCmGeIwsDD31qhXeKV0UWjX95bUmSitQjw0XMstQXPPM/w==",
+  "dgSpecHash": "OKpU1jCNscZOZzpr/MupONWt0CdUnSzYnOHfXJ9B+kztC0FqbVG22Hnp2USzp9TfbJFKlo/RYBcxKnM+kpEfNQ==",
   "success": true,
   "projectFilePath": "C:\\VS Code Repos\\DatingAppDemo\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\esine\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\esine\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.13\\microsoft.aspnetcore.authentication.jwtbearer.6.0.13.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.9\\microsoft.data.sqlite.core.7.0.9.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.9\\microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
@@ -26,6 +27,8 @@
     "C:\\Users\\esine\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.13.1\\microsoft.identitymodel.jsonwebtokens.6.13.1.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\microsoft.identitymodel.logging\\6.13.1\\microsoft.identitymodel.logging.6.13.1.nupkg.sha512",
+    "C:\\Users\\esine\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\esine\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.13.1\\microsoft.identitymodel.tokens.6.13.1.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
