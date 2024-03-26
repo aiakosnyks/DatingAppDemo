@@ -1,11 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-test-error',
   standalone: true,
   templateUrl: './test-error.component.html',
-  styleUrl: './test-error.component.css'
+  styleUrl: './test-error.component.css',
+  imports: [
+    CommonModule
+  ]
 })
 export class TestErrorComponent implements OnInit {
   baseUrl = 'https://localhost:5001/api/';
