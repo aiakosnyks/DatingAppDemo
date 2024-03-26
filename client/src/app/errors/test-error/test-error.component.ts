@@ -4,12 +4,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test-error',
   standalone: true,
-  imports: [],
   templateUrl: './test-error.component.html',
   styleUrl: './test-error.component.css'
 })
 export class TestErrorComponent implements OnInit {
   baseUrl = 'https://localhost:5001/api/';
+  validationErrors: string[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -46,10 +46,14 @@ export class TestErrorComponent implements OnInit {
     })
   }
 
+  
   get400ValidationError() {
     this.http.post(this.baseUrl + 'account/register', {}).subscribe({
       next: response => console.log(response),
-      error: error => console.log(error)
+      error: error => {
+        console.log(error);
+        this.validationErrors = error;
+      }
     })
   }
 
