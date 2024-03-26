@@ -16,6 +16,10 @@ import { MessagesComponent } from './messages/messages.component';
 import { SharedModule } from './_modules/shared.module';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
+import { CommonModule } from '@angular/common';           
+import {NgIf} from '@angular/common';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,9 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
     FormsModule,
     BrowserAnimationsModule,
     SharedModule,
-    TestErrorComponent
+    TestErrorComponent,
+    CommonModule,
+    NgIf
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
