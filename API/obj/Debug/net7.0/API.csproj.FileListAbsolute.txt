@@ -71,3 +71,7 @@ C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Microsoft.IdentityModel.Prot
 C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Data\UserSeedData.json
 C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\AutoMapper.dll
 C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\VS Code Repos\DatingAppDemo\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cs

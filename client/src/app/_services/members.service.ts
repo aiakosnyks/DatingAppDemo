@@ -12,7 +12,7 @@ export class MembersService {
   constructor(private http: HttpClient) { }
 
   getMembers() {
-    return this.http.get<Member[]>(this.baseUrl + 'users' + this.getHttpOptions())
+    return this.http.get<Member[]>(this.baseUrl + 'users', this.getHttpOptions())
   }
 
   getMember(username: string) {
