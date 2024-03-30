@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { ListsComponent } from './lists/lists.component';
@@ -29,6 +30,7 @@ import {NgIf} from '@angular/common';
     RegisterComponent,
     MemberListComponent,
     MemberDetailComponent,
+    MemberCardComponent,
     ListsComponent,
     MessagesComponent, 
   ],
