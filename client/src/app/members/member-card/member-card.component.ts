@@ -4,7 +4,7 @@ import { Member } from 'src/app/_models/member';
 @Component({
   selector: 'app-member-card',
   templateUrl: './member-card.component.html',
-  styleUrl: './member-card.component.css',
+  styleUrl: './member-card.component.css'
 })
 
 export class MemberCardComponent implements OnInit {
