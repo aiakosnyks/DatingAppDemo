@@ -19,6 +19,7 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { CommonModule } from '@angular/common';           
 import {NgIf} from '@angular/common';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 
 
 
@@ -46,7 +47,8 @@ import {NgIf} from '@angular/common';
     NgIf
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
