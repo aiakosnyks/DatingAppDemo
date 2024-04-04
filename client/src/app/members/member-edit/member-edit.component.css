@@ -15,14 +15,15 @@
 }
 
 .btn {
-    border-color: lightslategrey;
-    background-color: lightgrey;
+    background-color:rgb(194, 233, 212);
+    border-color: rgb(167, 255, 192);
+
+    color: green;
     border-style: dotted;
 
 }
 
 .btn:hover{
-    color:darkred;
-    background-color:pink;
-    border-color: palevioletred;
+    border-color: rgb(167, 255, 192);
+    background-color: rgb(100, 251, 143);
 }
