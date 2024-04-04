@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +21,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
   exports: [
     BsDropdownModule,
     ToastrModule,
-    TabsModule
+    TabsModule,
+    FormsModule, 
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

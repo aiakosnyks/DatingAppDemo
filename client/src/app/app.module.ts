@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
@@ -20,8 +19,8 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { CommonModule } from '@angular/common';           
 import {NgIf} from '@angular/common';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
-
-
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @NgModule({
   declarations: [
@@ -38,11 +37,13 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     BrowserAnimationsModule,
     SharedModule,
     TestErrorComponent,
     CommonModule,
+    MemberDetailComponent,
+    TabsModule,
+    MemberEditComponent,
     NgIf
   ],
   providers: [
