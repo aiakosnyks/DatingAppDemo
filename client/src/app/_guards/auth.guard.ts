@@ -1,7 +1,7 @@
 import { CanActivateFn } from '@angular/router';
 import { AccountService } from '../_services/account.service';
 import { inject } from '@angular/core';
-import { Toast, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { map } from 'rxjs';
 
 
