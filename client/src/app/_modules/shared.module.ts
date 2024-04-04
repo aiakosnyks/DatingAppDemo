@@ -5,6 +5,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -16,6 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     TabsModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
+    }),
+    NgxSpinnerModule.forRoot({
+      type: 'line-scale-party'
     })
   ],
   exports: [
@@ -23,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ToastrModule,
     TabsModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ]
 })
 export class SharedModule { }
