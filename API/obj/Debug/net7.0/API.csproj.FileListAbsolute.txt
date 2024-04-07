@@ -75,3 +75,5 @@ C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\VS Code Repos\DatingAppDemo\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cs
+C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\VS Code Repos\DatingAppDemo\API\bin\Debug\net7.0\Newtonsoft.Json.dll
