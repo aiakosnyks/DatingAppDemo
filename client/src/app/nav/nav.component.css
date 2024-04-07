@@ -1,13 +1,3 @@
 .dropdown-toggle, .dropdown-item {
     cursor: pointer;
 }
-
-.btn-login
-{
-    border-color: lightslategrey;
-    background-color: rgb(174, 205, 184);
-    border-style: dotted; 
-}
-
-
-  
