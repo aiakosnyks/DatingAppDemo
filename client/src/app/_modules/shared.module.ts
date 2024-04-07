@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -14,21 +10,13 @@ import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
   imports: [
     CommonModule,
     BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
-    }),
-    NgxSpinnerModule.forRoot({
-      type: 'line-scale-party'
     })
   ],
   exports: [
     BsDropdownModule,
-    ToastrModule,
-    TabsModule,
-    FormsModule, 
-    ReactiveFormsModule,
-    NgxSpinnerModule
+    ToastrModule
   ]
 })
 export class SharedModule { }
