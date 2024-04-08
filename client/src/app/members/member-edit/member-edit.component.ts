@@ -11,14 +11,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { TabHeadingDirective, TabsModule } from 'ngx-bootstrap/tabs';
+import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
 
 
 @Component({
-  selector: 'app-member-edit',
-  imports: [CommonModule, TabsModule, GalleryModule, FormsModule, ReactiveFormsModule],
-  standalone: true,
-  templateUrl: './member-edit.component.html',
-  styleUrl: './member-edit.component.css'
+    selector: 'app-member-edit',
+    standalone: true,
+    templateUrl: './member-edit.component.html',
+    styleUrl: './member-edit.component.css',
+    imports: [CommonModule, TabsModule, GalleryModule, FormsModule, ReactiveFormsModule, PhotoEditorComponent]
 })
 
 export class MemberEditComponent implements OnInit{
