@@ -23,6 +23,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     ListsComponent,
     MessagesComponent, 
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,8 +49,10 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     TabsModule,
     MemberEditComponent,
     NgIf,
-    NgxSpinnerModule
+    NgxSpinnerModule, 
+    ReactiveFormsModule
   ],
+
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
