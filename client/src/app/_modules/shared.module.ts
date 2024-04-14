@@ -6,7 +6,6 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
-import { FileUploadModule } from 'ng2-file-upload';
 
 
 
@@ -21,8 +20,7 @@ import { FileUploadModule } from 'ng2-file-upload';
     }),
     NgxSpinnerModule.forRoot({
       type: 'line-scale-party'
-    }),
-    FileUploadModule
+    })
   ],
   exports: [
     BsDropdownModule,
