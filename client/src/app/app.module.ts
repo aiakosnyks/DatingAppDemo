@@ -24,6 +24,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MemberListComponent,
     MemberCardComponent,
     ListsComponent,
-    MessagesComponent, 
+    MessagesComponent,
   ],
   
   imports: [
@@ -50,7 +52,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MemberEditComponent,
     NgIf,
     NgxSpinnerModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextInputComponent
   ],
 
   providers: [

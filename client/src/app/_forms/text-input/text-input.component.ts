@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Self, input } from '@angular/core';
+import { Component, Input, Self, input, Optional } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 @Component({
