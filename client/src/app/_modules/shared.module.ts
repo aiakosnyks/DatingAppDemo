@@ -29,6 +29,6 @@ import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
     FormsModule, 
     ReactiveFormsModule,
     NgxSpinnerModule
-  ]
+   ]
 })
 export class SharedModule { }
