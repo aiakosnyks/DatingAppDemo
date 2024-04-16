@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 
@@ -20,7 +21,8 @@ import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
     }),
     NgxSpinnerModule.forRoot({
       type: 'line-scale-party'
-    })
+    }),
+    BsDatepickerModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
@@ -28,7 +30,8 @@ import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
     TabsModule,
     FormsModule, 
     ReactiveFormsModule,
-    NgxSpinnerModule
-   ]
+    NgxSpinnerModule,
+    BsDatepickerModule
+  ]
 })
 export class SharedModule { }

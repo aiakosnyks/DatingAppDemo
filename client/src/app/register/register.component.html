@@ -17,7 +17,7 @@
     <app-text-input ngDefaultControl [formControl]="$any(registerForm.controls['knownAs'])"
         [label]="'Known As'"></app-text-input>
     <app-text-input ngDefaultControl [formControl]="$any(registerForm.controls['dateOfBirth'])"
-        [label]="'Date of Birth'"></app-text-input>
+        [label]="'Date of Birth'" [type]="'date'"></app-text-input>
     <app-text-input ngDefaultControl [formControl]="$any(registerForm.controls['city'])"
         [label]="'City'"></app-text-input>
     <app-text-input ngDefaultControl [formControl]="$any(registerForm.controls['country'])"

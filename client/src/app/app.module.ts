@@ -25,6 +25,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatePickerComponent } from './_forms/date-picker/date-picker.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
     MemberCardComponent,
     ListsComponent,
     MessagesComponent,
+    DatePickerComponent
+
   ],
   
   imports: [
@@ -53,8 +57,9 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
     NgIf,
     NgxSpinnerModule, 
     ReactiveFormsModule,
-    TextInputComponent
-  ],
+    TextInputComponent,
+    BsDatepickerModule.forRoot(),
+    ],
 
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
