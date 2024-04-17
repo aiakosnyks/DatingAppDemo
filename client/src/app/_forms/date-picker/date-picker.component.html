@@ -5,8 +5,11 @@
         class="form-control"
         [formControl]="control"
         placeholder="{{label}}"
-        bsDatePicker
+        bsDatepicker
         [bsConfig]="bsConfig"
         [maxDate]="maxDate"
         >
+        <div *ngIf="control.errors?.['required']" class="invalid-feedback">
+            {{label}} is required
+        </div>
 </div>
