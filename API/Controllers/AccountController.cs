@@ -35,7 +35,7 @@ namespace API.Controllers;
             using var hmac = new HMACSHA512();
            
             user.UserName = registerDTO.Username.ToLower();
-            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.password));
+            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDTO.Password));
             user.PasswordSalt = hmac.Key;
 
             _context.Users.Add(user);
