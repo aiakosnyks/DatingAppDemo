@@ -1,8 +1,10 @@
 using API.DTOs;
 using API.Entities;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 
@@ -25,13 +27,13 @@ public class UserRepository : IUserRepository
             .SingleOrDefaultAsync();
     }
 
-    public async Task<IEnumerable<MemberDTO>> GetMembersAsync()
+    public async Task<PagedList<MemberDTO>> GetMembersAsync(UserParams userParams)
     {
-        return await _context.Users
-            .Take(4)
-            .Skip(4)
-            .ProjectTo<MemberDTO>(_mapper.ConfigurationProvider)
-            .ToListAsync();
+            var query = _context.Users
+                .ProjectTo<MemberDTO>(_mapper.ConfigurationProvider)
+                .AsNoTracking();
+
+            return await PagedList<MemberDTO>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
     }
 
 
