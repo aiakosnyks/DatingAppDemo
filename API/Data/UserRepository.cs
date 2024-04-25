@@ -3,6 +3,7 @@ using API.Entities;
 using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
+using AutoMapper.Execution;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,11 +30,19 @@ public class UserRepository : IUserRepository
 
     public async Task<PagedList<MemberDTO>> GetMembersAsync(UserParams userParams)
     {
-            var query = _context.Users
-                .ProjectTo<MemberDTO>(_mapper.ConfigurationProvider)
-                .AsNoTracking();
+            var query = _context.Users.AsQueryable();
 
-            return await PagedList<MemberDTO>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
+            query = query.Where(u => u.UserName != userParams.CurrentUsername);
+            query = query.Where(u => u.Gender == userParams.Gender);
+
+            var minDob = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MaxAge - 1));
+            var maxDob = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MinAge));
+
+            query = query.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
+            return await PagedList<MemberDTO>.CreateAsync(
+                query.AsNoTracking().ProjectTo<MemberDTO>(_mapper.ConfigurationProvider),
+                userParams.PageNumber,
+                 userParams.PageSize);
     }
 
 
