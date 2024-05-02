@@ -39,6 +39,13 @@ public class UserRepository : IUserRepository
             var maxDob = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MinAge));
 
             query = query.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
+            
+            query = userParams.OrderBy switch 
+            {
+                "created" => query.OrderByDescending(x => x.Created),
+                _ => query.OrderByDescending(x => x.LastActive)
+            };
+            
             return await PagedList<MemberDTO>.CreateAsync(
                 query.AsNoTracking().ProjectTo<MemberDTO>(_mapper.ConfigurationProvider),
                 userParams.PageNumber,

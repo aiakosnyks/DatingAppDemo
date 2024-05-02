@@ -39,7 +39,15 @@
 .i-btn  {
     background-color: palevioletred;
     border-color: palevioletred;
+    opacity: 0.7;
 }
 .i-btn > i {
     color: black;
+}
+
+.i-btn:hover {
+    transform: scale(1.2, 1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 1;
 }

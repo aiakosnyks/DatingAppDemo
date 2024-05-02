@@ -1,0 +1,29 @@
+.filter-btn1  {
+    background-color:rgb(173, 250, 209);
+    border-color: rgb(173, 250, 209);
+    color: black;
+    opacity: 0.85;
+}
+
+.filter-btn2  {
+    background-color:rgb(255, 177, 189);
+    border-color: rgb(255, 177, 189);
+    color: black;
+    opacity: 0.85;
+
+}
+
+.filter-btn1:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 1;
+}
+
+.filter-btn2:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 1;
+
+}
