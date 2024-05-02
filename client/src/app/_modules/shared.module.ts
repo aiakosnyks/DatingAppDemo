@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 
 @NgModule({
@@ -24,8 +24,10 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
       type: 'line-scale-party'
     }),
     BsDatepickerModule.forRoot(),
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
+
   exports: [
     BsDropdownModule,
     ToastrModule,
@@ -34,7 +36,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     ReactiveFormsModule,
     NgxSpinnerModule,
     BsDatepickerModule,
-    PaginationModule
+    PaginationModule,
+    ButtonsModule
   ]
 })
 export class SharedModule { }
