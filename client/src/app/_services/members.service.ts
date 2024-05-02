@@ -16,6 +16,7 @@ export class MembersService {
   constructor(private http: HttpClient) { }
 
   getMembers(userParams: UserParams) {
+    console.log(Object.values(userParams).join('-'))
     let params = this.getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
 
     params = params.append('minAge', userParams.minAge);

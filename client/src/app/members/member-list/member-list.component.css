@@ -27,3 +27,31 @@
     opacity: 1;
 
 }
+
+.lastActive-btn {
+    background-color:rgb(173, 237, 250);
+    border-color: rgb(173, 237, 250);
+    color: black;
+    opacity: 0.85;
+}
+
+.lastActive-btn:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 1;
+}
+
+.newestMembers-btn {
+    background-color:rgb(149, 227, 243);
+    border-color: rgb(149, 227, 243);
+    color: black;
+    opacity: 0.85;
+}
+
+.newestMembers-btn:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 1;
+}

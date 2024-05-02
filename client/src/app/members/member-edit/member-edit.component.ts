@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { TabHeadingDirective, TabsModule } from 'ngx-bootstrap/tabs';
 import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
+import { TimeagoModule } from 'ngx-timeago';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
     standalone: true,
     templateUrl: './member-edit.component.html',
     styleUrl: './member-edit.component.css',
-    imports: [CommonModule, TabsModule, GalleryModule, FormsModule, ReactiveFormsModule, PhotoEditorComponent]
+    imports: [CommonModule, TabsModule, GalleryModule, FormsModule, ReactiveFormsModule, PhotoEditorComponent, TimeagoModule]
 })
 
 export class MemberEditComponent implements OnInit{
