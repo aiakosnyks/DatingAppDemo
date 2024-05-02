@@ -61,7 +61,7 @@ export class MemberListComponent implements OnInit{
   pageChanged(event: any)
   {
     if(this.userParams && this.userParams?.pageNumber !== event.page) {
-      this.userParams.pageSize = event.page;
+      this.userParams.pageNumber = event.page;
       this.loadMembers();
     }
   }
