@@ -25,9 +25,9 @@ public class DataContext : DbContext
             .OnDelete(DeleteBehavior.Cascade);
 
         builder.Entity<UserLike>()
-            .HasOne(s => s.SourceUser)
-            .WithMany(l => l.LikedUsers)
-            .HasForeignKey(s => s.SourceUserId)
+            .HasOne(s => s.TargetUser)
+            .WithMany(l => l.LikedByUsers)
+            .HasForeignKey(s => s.TargetUserId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
