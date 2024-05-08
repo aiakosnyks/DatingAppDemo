@@ -5,6 +5,7 @@ using API.Entities;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Namespace;
+using API.Helpers;
 
 namespace API.Controllers{
     public class MessagesController : BaseApiController
@@ -50,6 +51,20 @@ namespace API.Controllers{
             if(await _messageRepository.SaveAllAsync()) return Ok(_mapper.Map<MessageDTO>(message));
 
             return BadRequest("Failed to send message");
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<PagedList<MessageDTO>>> GetMessagesForUser([FromQuery]
+            MessageParams messageParams)
+        {
+            messageParams.Username = User.GetUsername();
+
+            var messages = await _messageRepository.GetMessagesForUser(messageParams);
+
+            Response.AddPaginationHeader(new PaginationHeader(messages.CurrentPage, messages.PageSize,
+                messages.TotalCount, messages.TotalPages));
+            
+            return messages;
         }
     }
 }
