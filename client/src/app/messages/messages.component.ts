@@ -11,7 +11,7 @@ import { MessageService } from '../_services/message.service';
 export class MessagesComponent {
   messages?: Message[];
   pagination?: Pagination;
-  container = 'Inbox';
+  container = 'Unread';
   pageNumber = 1;
   pageSize = 5;
 
