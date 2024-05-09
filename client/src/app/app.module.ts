@@ -27,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatePickerComponent } from './_forms/date-picker/date-picker.component';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 @NgModule({
@@ -40,7 +41,6 @@ import { DatePickerComponent } from './_forms/date-picker/date-picker.component'
     ListsComponent,
     MessagesComponent,
     DatePickerComponent
-
   ],
   
   imports: [
@@ -52,6 +52,7 @@ import { DatePickerComponent } from './_forms/date-picker/date-picker.component'
     TestErrorComponent,
     CommonModule,
     MemberDetailComponent,
+    MemberMessagesComponent,
     TabsModule,
     MemberEditComponent,
     NgIf,

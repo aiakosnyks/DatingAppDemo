@@ -1,3 +1,4 @@
+import { MemberMessagesComponent } from './../member-messages/member-messages.component';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -12,7 +13,7 @@ import { MembersService } from 'src/app/_services/members.service';
   standalone: true,
   templateUrl: './member-detail.component.html',
   styleUrls: ['./member-detail.component.css'],
-  imports: [CommonModule, TabsModule, GalleryModule, TimeagoModule]
+  imports: [CommonModule, TabsModule, GalleryModule, TimeagoModule, MemberMessagesComponent]
 })
 export class MemberDetailComponent {
   member: Member | undefined;
@@ -22,6 +23,7 @@ export class MemberDetailComponent {
 
   ngOnInit(): void {
     this.loadMember();
+    console.log(this.member);
   }
 
   loadMember() {
