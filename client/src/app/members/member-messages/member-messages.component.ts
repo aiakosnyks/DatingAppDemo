@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { MessageService } from './../../_services/message.service';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Message } from 'src/app/_models/message';
 import { TimeagoModule } from 'ngx-timeago';
 
@@ -11,22 +11,12 @@ import { TimeagoModule } from 'ngx-timeago';
   templateUrl: './member-messages.component.html',
   styleUrl: './member-messages.component.css'
 })
-export class MemberMessagesComponent {
-  @Input() username?: string;
-  messages: Message[] = [];
+export class MemberMessagesComponent implements OnInit {
+ @Input() username?: string;
+ @Input() messages: Message[] = [];
 
-  constructor(private messageService: MessageService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.loadMessages();
   }
-
-  loadMessages() {
-    if(this.username) {
-      this.messageService.getMessageThread(this.username).subscribe({
-        next: messages => this.messages = messages
-      })
-    }
-  }
-
 }
