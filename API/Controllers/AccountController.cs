@@ -14,13 +14,13 @@ using AutoMapper;
 namespace API.Controllers;
     public class AccountController: BaseApiController
     {
-        private readonly DataContext _context;
+        private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
         
         private readonly IMapper _mapper;
-        public AccountController(DataContext context, ITokenService tokenService, IMapper mapper)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, IMapper mapper)
         {
-            _context = context;
+            _userManager = userManager;
             _tokenService = tokenService;
             _mapper = mapper;
         }
@@ -34,8 +34,9 @@ namespace API.Controllers;
                        
             user.UserName = registerDTO.Username.ToLower();
 
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            var result = await _userManager.CreateAsync(user, registerDTO.Password);
+            
+            if(!result.Succeeded) return BadRequest(result.Errors);
 
             return new UserDTO
             {
@@ -49,11 +50,15 @@ namespace API.Controllers;
         [HttpPost("login")]
         public async Task<ActionResult<UserDTO>> Login(LoginDTO loginDTO)
         {
-            var user = await _context.Users
-            .Include(x => x.Photos)
+            var user = await _userManager.Users
+            .Include(p => p.Photos)
             .SingleOrDefaultAsync(x => x.UserName == loginDTO.Username);
 
              if(user==null) return Unauthorized("Invalid username!");
+
+             var result = await _userManager.CheckPasswordAsync(user, loginDTO.password);
+
+             if(!result) return Unauthorized("Invalid password");
 
              return new UserDTO
             {
@@ -68,6 +73,6 @@ namespace API.Controllers;
 
         public async Task<bool> UserExists(string username)
         {
-            return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
+            return await _userManager.Users.AnyAsync(x => x.UserName == username.ToLower());
         }
     }
