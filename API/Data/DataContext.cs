@@ -29,7 +29,7 @@ public class DataContext : IdentityDbContext<AppUser, AppRole, int,
         builder.Entity<AppRole>()
             .HasMany(ur => ur.UserRoles)
             .WithOne(u => u.Role)
-            .HasForeignKey(ur => ur.UserId)
+            .HasForeignKey(ur => ur.RoleId)
             .IsRequired();
             
 

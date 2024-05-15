@@ -25,7 +25,7 @@ namespace API.Controllers;
             _mapper = mapper;
         }
 
-        [HttpPost("register")] //POST: api/account/register
+        [HttpPost("register")] //POST: api/account/register?username=jo&password=pwd
         public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO)
         {
             if(await UserExists(registerDTO.Username)) return BadRequest("Username is taken");
@@ -51,8 +51,8 @@ namespace API.Controllers;
         public async Task<ActionResult<UserDTO>> Login(LoginDTO loginDTO)
         {
             var user = await _userManager.Users
-            .Include(p => p.Photos)
-            .SingleOrDefaultAsync(x => x.UserName == loginDTO.Username);
+                .Include(p => p.Photos)
+                .SingleOrDefaultAsync(x => x.UserName == loginDTO.Username);
 
              if(user==null) return Unauthorized("Invalid username!");
 
